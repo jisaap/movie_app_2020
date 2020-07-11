@@ -29,21 +29,25 @@ class Chart extends React.Component {
     }
 
     renderChart = () => {
-        const charts = this.state.charts.map((dailyBoxOfficeList, index) => {
+        const {charts} = this.state;
+        console.log(charts);
+        // const charts = this.state.charts.map((dailyBoxOfficeList, index) => {
+            // console.log("charts : " + charts);
             return (
                 <About
-                    rank = { dailyBoxOfficeList.rank }
-                    movieNm = { dailyBoxOfficeList.movieNm }
-                    key = { index }
+                    // rank = { dailyBoxOfficeList.rank }
+                    // movieNm = { dailyBoxOfficeList.movieNm }
+                    charts = {charts}
+                    // key = { index }
                     />
             );
-        });
-        return charts;
+        // });
+        // return charts;
     }
 
     getCharts = async () => {
         const charts = await this.callApi();
-        // console.log(charts);
+        console.log(charts);
         this.setState({
             charts
         });
@@ -57,7 +61,7 @@ class Chart extends React.Component {
           .then(json => json.boxOfficeResult.dailyBoxOfficeList)
           .catch(err => console.log(err));
     };
-//  render 할때 한번에 넘기기 하나씩 넘어가서 UI 망가짐
+
     render() {
         const { charts } = this.state;
         return (

@@ -20,7 +20,7 @@
 .page-content {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: minmax(300px, 1fr) 2fr;
+    grid-template-columns: minmax(400px, 1fr) 2fr;
     grid-gap: 20px;
 }
 
@@ -32,16 +32,58 @@
     text-align: center;
 }
 .contentContainer {
-    border: 1px solid red;
+    margin: 5%;
+    padding: 5%;
+    border-radius: 10px;
     display: inline;
+    background-color: gray;
+    z-index: 3;
 }
 
 .ratingContainer {
     display: inline;
-    border: 1px solid red;
 }
 
 .inputContainer {
-    border: 1px solid red;
     margin-top: 20px;
+}
+
+.movie_charts {
+    list-style: none;
+    padding-inline-start: 0px;
+    text-align: left;
+}
+
+.charts_chart  {
+    /* float: left; */
+     /* display: flex; */
+    /* justify-content: flex-start; */
+    /* align-items: flex-start;  */
+    font-size: 1em !important;
+    /* left: ; */
+    margin: 5%;
+    margin-left: 0px;
+    padding-left: 3%;
+    border: 1px white solid;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.chart_dec {
+    font-size: 1em !important;
+    margin-top: 0px !important;
+    /* width: auto; */
+    /* position: inherit; */
+    padding-right: 3%;
+    float: right;
+}
+
+#col_blu {
+    color: #b6eb7a;
+}
+#col_red {
+    color: #e84a5f;
+}
+#col_gra {
+    color: #726a95;
 }
