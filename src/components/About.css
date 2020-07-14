@@ -1,16 +1,17 @@
 .about_container {
     box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3), 0, -6px, 16px, -6px rgba(0, 0, 0, 0.025);
     padding:  20px;
-    background-color:  white;
+    background-color:  #eff3f7;
     margin:  0 auto;
     margin-top:  100px;
     width: 80%;
-    border-radius: 5px;
+    border-radius: 10px;
     height: fit-content;
+    font-size: 2em;
 }
 
 .about_container span:first-child {
-    font-size: 20px;
+    font-size: 1em;
 }
 
 .about_container span:last-child {
@@ -18,10 +19,18 @@
     margin-top: 10px;
 }
 .page-content {
+    background-color: whitesmoke;
     margin-top: 20px;
     display: grid;
-    grid-template-columns: minmax(400px, 1fr) 2fr;
-    grid-gap: 20px;
+    grid-template-columns: minmax(800px, 1fr) 2fr;
+    grid-gap: 50px;
+    margin-right: 80px;
+    margin-left: 50px;
+}
+
+.Clouds, .page-content{
+    /* background-color: red; */
+    /* background: liner-gradient( to bottom,"#20002c", "#cbb4d4"); */
 }
 
 .page-content,
@@ -30,19 +39,17 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    /* height: 100%; */
 }
 .contentContainer {
     margin: 5%;
     padding: 5%;
-    border-radius: 10px;
+    border-radius: 15px;
     display: inline;
-    background-color: gray;
+    background-color: white !important;
     z-index: 3;
 }
 
-.ratingContainer {
-    display: inline;
-}
 
 .inputContainer {
     margin-top: 20px;
@@ -86,4 +93,14 @@
 }
 #col_gra {
     color: #726a95;
+}
+
+ul > li {
+    z-index: 10;
+}
+
+ul > p {
+    margin-top: -8%;
+    margin-left: -2%;
+    color: gray;
 }

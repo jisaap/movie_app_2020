@@ -1,6 +1,5 @@
 import React from "react";
 import About from "../components/About";
-// import "./Charts.css";
 
 
 const key = "d86c591b572c801bc6dc904564731a84";
@@ -30,24 +29,15 @@ class Chart extends React.Component {
 
     renderChart = () => {
         const {charts} = this.state;
-        console.log(charts);
-        // const charts = this.state.charts.map((dailyBoxOfficeList, index) => {
-            // console.log("charts : " + charts);
             return (
                 <About
-                    // rank = { dailyBoxOfficeList.rank }
-                    // movieNm = { dailyBoxOfficeList.movieNm }
                     charts = {charts}
-                    // key = { index }
                     />
             );
-        // });
-        // return charts;
     }
 
     getCharts = async () => {
         const charts = await this.callApi();
-        console.log(charts);
         this.setState({
             charts
         });
@@ -55,7 +45,7 @@ class Chart extends React.Component {
 
     callApi = () => {
         return fetch(
-            `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${res}&itemPerPage=10`
+            `https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${key}&targetDt=${res}&itemPerPage=10`
           )
           .then(a => a.json())
           .then(json => json.boxOfficeResult.dailyBoxOfficeList)

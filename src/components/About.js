@@ -1,25 +1,28 @@
-import React from "react";
-// import PropTypes from "prop-types";
+import React, {Suspense} from "react";
 import "./About.css";
+// import "./Weather.js";
+
+const Weather = React.lazy(() => 
+import("./Weather.js"));
 
 
-// function About({rank, movieNm}) {
 function About({charts}) {
-    console.log(charts[0]);
     return (
     <div className="about_container">
-        <span>
-        Come With Me !!!
-        </span>
+        {/* <span>
+            Recommend For You.
+        </span> */}
         <section className="page-content">
             <div className="contentContainer">
                 <ul className="movie_charts">
+                    <p>
+                    실시간 영화 순위
+                    </p>
                     {charts.map((chart) => (
                          <li key={chart.rnum} className="charts_chart">
-                              {chart.rank}위 : {chart.movieNm}
+                              {chart.rank}위 : {chart.movieNm.length > 20? chart.movieNm.slice(0,20) + "..." : chart.movieNm}
                               
                             <span className="chart_dec" id={getColor(chart.rankInten)}>
-                                {/* {chart.rankInten} */}
                                  {getRate(chart.rankInten)}
                             </span>
                         </li> 
@@ -27,17 +30,18 @@ function About({charts}) {
                      
                 </ul>
             </div>
-            <div className="ratingContainer">
-            <p>날씨?</p>
-            </div>
+            
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Weather />
+                </Suspense>
         </section>
             <div className="inputContainer">
-                <p>영화관 위치?</p>
+                <p>영화관 위치</p>
             </div>
         <span>Movie App Practice, 2020</span>  
     </div>
     );
-    
+
     function getRate(rate) {
         let result;
         if(rate > 0) {
@@ -62,12 +66,6 @@ function About({charts}) {
         return result;
         
     }
-    // About.propTypes = {
-    //     // rank : PropTypes.string.isRequired,
-    //     // movieNm : PropTypes.string.isRequired
-    //     // chart : PropTypes.arrayOf(PropTypes.string).isRequired
-        // chart: PropTypes.arrayOf(PropTypes.).isRequired
-    // }
 
 }
 
