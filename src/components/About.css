@@ -52,7 +52,26 @@
 
 
 .inputContainer {
+    background-color: whitesmoke;
     margin-top: 20px;
+    margin-right: 80px;
+    margin-left: 50px;
+    width: 92%;
+    height: 500px;
+}
+
+.mapContainer {
+    width: 92%;
+    height: 90%;
+    margin-left: 3%;
+    top: 5%;
+}
+
+.mapContainer > div {
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
 }
 
 .movie_charts {

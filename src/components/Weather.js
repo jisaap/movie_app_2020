@@ -14,20 +14,15 @@ class Weather extends React.Component {
 
     
     getLocation() {
-        console.log("get Location");
         navigator.geolocation.getCurrentPosition(this.getWeather);
     };
     
     getWeather = async (position) => {
-        console.log(position);
-        console.log("도착");
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        console.log(latitude, longitude);
         const result = await axios.get (
-            `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
+            `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
         );
-        console.log(result);
         this.setState({
             isLoading: false,
             condition: result.data.weather[0].main,
@@ -40,13 +35,13 @@ class Weather extends React.Component {
 
     render() {
         const { isLoading, temp, condition } = this.state
-        console.log(isLoading, temp, condition);
         return isLoading ? (
             <Loading />
         ) : (
             <WeatherView temp={Math.round(temp)} condition={condition} />
         );
     }
+    
     }
 
 

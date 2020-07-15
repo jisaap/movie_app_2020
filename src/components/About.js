@@ -1,17 +1,13 @@
 import React, {Suspense} from "react";
+import Map from "./Map.js";
 import "./About.css";
-// import "./Weather.js";
 
 const Weather = React.lazy(() => 
 import("./Weather.js"));
 
-
 function About({charts}) {
     return (
     <div className="about_container">
-        {/* <span>
-            Recommend For You.
-        </span> */}
         <section className="page-content">
             <div className="contentContainer">
                 <ul className="movie_charts">
@@ -36,9 +32,12 @@ function About({charts}) {
                 </Suspense>
         </section>
             <div className="inputContainer">
-                <p>영화관 위치</p>
+                <Map 
+                />
             </div>
-        <span>Movie App Practice, 2020</span>  
+        <div>
+            <span>Movie App Practice, 2020</span>  
+        </div>
     </div>
     );
 

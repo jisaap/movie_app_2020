@@ -12,11 +12,7 @@ import {WiDayHaze} from "react-icons/wi";
 import {RiMistLine} from "react-icons/ri";
 import {WiDust} from "react-icons/wi";
 
-const weatherIcon = "AiFillCloud"
 function WeatherView({ temp, condition }) {
-    
-    console.log(condition);
-
     return (
         <div className="ratingContainer" id={condition}>
             <div className={condition} >
@@ -39,7 +35,6 @@ function getComent(con) {
     con === "Haze"?<p>Just don't go outside.</p>:
     con === "Mist"?<p>It's like you have no glasses on.</p>:
     con === "Dust"?<p>Thanks a lot China</p>:<p>....</p>
-
     );
 }
 
